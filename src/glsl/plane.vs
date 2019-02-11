@@ -6,7 +6,7 @@ uniform float time;
 
 varying vec3 vPosition;
 
-#pragma glslify: rotateMatrixX = require(glsl-matrix/rotateMatrixX);
+#pragma glslify: rotateMatrixX = require(./rotateMatrixX);
 #pragma glslify: cnoise3 = require(glsl-noise/classic/3d);
 
 void main(void) {

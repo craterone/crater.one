@@ -43,10 +43,9 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "glsl-util": "git://github.com/ykob/glsl-util.git",
+    "event-stream": "^4.0.1",
     "glsl-easings": "^1.0.0",
     "glsl-inverse": "^1.0.0",
-    "glsl-matrix": "git://github.com/ykob/glsl-matrix.git",
     "glsl-noise": "0.0.0",
     "glslify": "^5.1.0"
   }

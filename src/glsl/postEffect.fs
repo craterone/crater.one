@@ -7,7 +7,7 @@ uniform sampler2D texture;
 varying vec3 vPosition;
 varying vec2 vUv;
 
-#pragma glslify: random = require(glsl-util/random);
+#pragma glslify: random = require(./random);
 
 void main() {
   float noise = random(vPosition.xy + time);

@@ -1,7 +1,6 @@
 import ConsoleSignature from './modules/ConsoleSignature.js';
 import PostEffect from './modules/PostEffect.js';
 import Plane from './modules/Plane.js';
-import buildIndexContent from './modules/buildIndexContent.js';
 import Hover from './modules/Hover.js';
 
 const hovers = document.getElementsByClassName('js-hover');
@@ -57,7 +56,6 @@ const init = () => {
   on();
   resizeWindow();
   renderLoop();
-  buildIndexContent();
 
   for (var i = 0; i < hovers.length; i++) {
     new Hover(hovers[i]);

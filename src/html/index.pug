@@ -5,7 +5,7 @@
   var metaTitle = 'Chen Cong | crater.one';
   var metaKeywords = 'Chen Cong';
   var metaDescription = 'I am a coder.';
-  var metaOgpImg = 'ogp.png';
+  //- var metaOgpImg = 'ogp.png';
 
 doctype html
 html(lang="ch")
@@ -23,37 +23,35 @@ html(lang="ch")
     //- link(rel="apple-touch-icon" href="./img/apple-touch-icon.png")
     link(rel="stylesheet" href="./css/main.css")
     
-    meta(property="og:title", content=metaTitle)
-    meta(property="og:site_name", content=metaTitle)
-    meta(property="og:type", content="website")
-    meta(property="og:description", content=metaDescription)
-    meta(property="og:url", content=websiteDomain)
-    meta(property="og:image", content=websiteDomain + '/img/' + metaOgpImg)
+    //- meta(property="og:title", content=metaTitle)
+    //- meta(property="og:site_name", content=metaTitle)
+    //- meta(property="og:type", content="website")
+    //- meta(property="og:description", content=metaDescription)
+    //- meta(property="og:url", content=websiteDomain)
+    //- meta(property="og:image", content=websiteDomain + '/img/' + metaOgpImg)
     
-    meta(name="twitter:card", content="summary_large_image")
-    meta(name="twitter:title", content=metaTitle)
-    meta(name="twitter:description", content=metaDescription)
-    meta(name="twitter:image", content=websiteDomain + '/img/' + metaOgpImg)
+    //- meta(name="twitter:card", content="summary_large_image")
+    //- meta(name="twitter:title", content=metaTitle)
+    //- meta(name="twitter:description", content=metaDescription)
+    //- meta(name="twitter:image", content=websiteDomain + '/img/' + metaOgpImg)
 
   body
     .p-index-page
       .p-index-header
         h1.p-index-header__name
           |Chen Cong
-        h2.p-index-header__url
-          |crater.one
 
       .p-index-page__in#index-content
         .p-index-content(
           :class = '{ "is-hidden" : isVisibleForm }'
           )
           p.p-index-content__excerpt
-            |I am a Coder.
+            |I'm a coder.
           .p-index-content__link
+            a(href="#")
+              |Blog
             a(href="https://github.com/craterone")
               |GitHub
-            a(href="#")
-              |Facebook
             a(href="#")
               |Twitter
             a(href="#")

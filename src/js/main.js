@@ -1,4 +1,3 @@
-import ConsoleSignature from './modules/ConsoleSignature.js';
 import PostEffect from './modules/PostEffect.js';
 import Plane from './modules/Plane.js';
 import Hover from './modules/Hover.js';
@@ -61,6 +60,5 @@ const init = () => {
     new Hover(hovers[i]);
   }
 
-  new ConsoleSignature();
 }
 init();

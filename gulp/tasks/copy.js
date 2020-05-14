@@ -12,7 +12,3 @@ gulp.task('copyToBuild', () => {
     .pipe(gulp.dest(conf.build.dest));
 });
 
-gulp.task('copyPhpToBuild', () => {
-  return gulp.src(conf.php.src, conf.php.opts)
-    .pipe(gulp.dest(conf.php.dest));
-});

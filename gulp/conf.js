@@ -6,34 +6,6 @@ const DIR = module.exports.DIR =  {
   BUILD: 'build'
 };
 
-module.exports.serve = {
-  dst: {
-    //tunnel: 'test',
-    notify: false,
-    startPath: DIR.PATH,
-    ghostMode: false,
-    server: {
-      baseDir: DIR.DEST,
-      index: 'index.html',
-      routes: {
-        [DIR.PATH]: `${DIR.DEST}${DIR.PATH}/`
-      }
-    }
-  },
-  build: {
-    //tunnel: 'test',
-    notify: false,
-    startPath: DIR.PATH,
-    ghostMode: false,
-    server: {
-      baseDir: DIR.BUILD,
-      index: 'index.html',
-      routes: {
-        [DIR.PATH]: `${DIR.BUILD}${DIR.PATH}/`
-      }
-    }
-  }
-};
 
 module.exports.scripts = {
   common: '',

@@ -1,11 +1,15 @@
 const gulp = require('gulp');
-const requireDir = require('require-dir');
 const runSequence = require('run-sequence');
 
-const DIR = require('./gulp/conf').DIR;
-
-requireDir('./gulp/tasks');
-
+require('./gulp/conf');
+require('./gulp/tasks/scripts');
+require('./gulp/tasks/cleanCss');
+require('./gulp/tasks/copy');
+require('./gulp/tasks/clean');
+require('./gulp/tasks/pug');
+require('./gulp/tasks/sass');
+require('./gulp/tasks/replace');
+require('./gulp/tasks/uglify');
 
 gulp.task('build', cb => {
   runSequence(

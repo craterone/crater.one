@@ -2,10 +2,12 @@ const gulp = require('gulp');
 
 const $ = require('../plugins');
 const conf = require('../conf').sass;
+const sass = require('gulp-dart-sass');
+
 
 gulp.task('sass', () => {
   return gulp.src(conf.src)
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe($.autoprefixer({
       browsers: conf.browsers,
       cascade: false

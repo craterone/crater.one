@@ -1,27 +1,18 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
-const watchify = require('watchify');
 const source = require('vinyl-source-stream');
 const eventStream = require('event-stream');
 
 const $ = require('../plugins');
 const conf = require('../conf').scripts;
 
-const bundler = (entry, isWatch) => {
+const bundler = (entry) => {
   const bOpts = conf.browserifyOpts;
   var b;
 
   bOpts.entries = [conf.common, entry]
 
-  if (isWatch) {
-    // bOpts.debug = true
-    bOpts.cache = {};
-    bOpts.packageCache = {};
-    bOpts.fullPath = true;
-    b = watchify(browserify(bOpts));
-  } else {
-    b = browserify(bOpts);
-  }
+  b = browserify(bOpts);
 
 
   const bundle = () => {
@@ -53,9 +44,3 @@ gulp.task('browserify', () => {
   return eventStream.merge.apply(null, tasks);
 });
 
-gulp.task('watchify', () => {
-  const tasks = conf.entryFiles.map(entry => {
-    return bundler(entry, true);
-  });
-  return eventStream.merge.apply(null, tasks);
-});

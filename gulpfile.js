@@ -8,31 +8,6 @@ const DIR = require('./gulp/conf').DIR;
 
 requireDir('./gulp/tasks');
 
-gulp.task('predefault', cb => {
-  runSequence(
-    'cleanDest',
-    ['pug', 'sass', 'watchify', 'vendorScripts', 'copyToDest'],
-    'serve',
-    cb
-  );
-});
-
-gulp.task('default', ['predefault'], () => {
-  gulp.watch(
-    [`./${DIR.SRC}/**/*.pug`],
-    ['pug', reload]
-  );
-
-  gulp.watch(
-    [`./${DIR.SRC}/**/*.{scss,sass}`],
-    ['sass', reload]
-  );
-
-  gulp.watch(
-    [`./${DIR.DEST}/**/*.js`],
-    reload
-  );
-});
 
 gulp.task('build', cb => {
   runSequence(

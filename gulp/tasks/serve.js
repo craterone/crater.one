@@ -6,7 +6,3 @@ const conf = require('../conf').serve;
 gulp.task('serve', () => {
   browserSync(conf.dst);
 });
-
-gulp.task('serveBuild', () => {
-  browserSync(conf.build);
-});

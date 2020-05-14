@@ -10,7 +10,7 @@ requireDir('./gulp/tasks');
 gulp.task('build', cb => {
   runSequence(
     'cleanDest',
-    ['pug', 'sass', 'browserify', 'vendorScripts', 'copyToDest'],
+    ['pug', 'sass', 'browserify', 'copyToDest'],
     'cleanBuild',
     'replaceHtml',
     'cleanCss',

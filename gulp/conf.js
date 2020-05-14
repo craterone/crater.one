@@ -25,13 +25,6 @@ module.exports.scripts = {
   dest: `${DIR.DEST}${DIR.PATH}/js`
 };
 
-module.exports.vendorScripts = {
-  src: [
-    `./${DIR.SRC}/js/vendor/**.js`,
-  ],
-  concat: 'vendor.js',
-  dest: `./${DIR.DEST}${DIR.PATH}/js/`
-};
 
 module.exports.pug = {
   src: [
@@ -77,7 +70,6 @@ module.exports.cleanCss = {
 
 module.exports.uglify = {
   src: [
-    `./${DIR.DEST}${DIR.PATH}/js/vendor.js`,
     `./${DIR.DEST}${DIR.PATH}/js/main.js`,
   ],
   dest: `./${DIR.BUILD}${DIR.PATH}/js`

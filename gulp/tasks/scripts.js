@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
 const watchify = require('watchify');
-const licensify = require('licensify');
 const source = require('vinyl-source-stream');
 const eventStream = require('event-stream');
 
@@ -24,9 +23,6 @@ const bundler = (entry, isWatch) => {
     b = browserify(bOpts);
   }
 
-  if (process.env.NODE_ENV === 'production') {
-    b.plugin(licensify);
-  }
 
   const bundle = () => {
     return b.bundle()

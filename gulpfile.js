@@ -41,7 +41,6 @@ gulp.task('build', cb => {
     'cleanBuild',
     'replaceHtml',
     'cleanCss',
-    'imagemin',
     'uglify',
     ['copyToBuild'],
     cb

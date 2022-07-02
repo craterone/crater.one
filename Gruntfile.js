@@ -1,3 +1,13 @@
+
+const src_path = `src`;
+
+
+const dst_path = `dist`;
+
+const dst_js_path = `${dst_path}/js`;
+
+
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -8,8 +18,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        src: `${dst_js_path}/main.js`,
+        dest: `${dst_js_path}/main.min.js`,
       }
     },
     pug: {
@@ -47,9 +57,12 @@ module.exports = function(grunt) {
           ]
         }
       }
-    }
+    },
+    clean: [dst_path]
+
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -57,6 +70,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'pug','browserify']);
+  grunt.registerTask('default', ['clean', 'sass', 'pug', 'browserify', 'uglify'
+]);
 
 };

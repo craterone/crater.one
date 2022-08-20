@@ -1,8 +1,11 @@
 
-const src_path = `src`;
+const src_path = 'src';
 
+const dst_path = 'dist';
 
-const dst_path = `dist`;
+const html_files = {};
+html_files[`${dst_path}/index.html`] = [`${src_path}/html/*.pug`];
+
 
 const dst_js_path = `${dst_path}/js`;
 
@@ -29,9 +32,7 @@ module.exports = function(grunt) {
             debug: false
           }
         },
-        files: {
-          'dist/index.html': ['src/html/*.pug',]
-        }
+        files: html_files
       }
     },
     sass: {
@@ -71,6 +72,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['clean', 'sass', 'pug', 'browserify', 'uglify'
-]);
+  ]);
 
 };

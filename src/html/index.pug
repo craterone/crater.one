@@ -2,9 +2,9 @@
   var websiteDomain = 'http://crater.one';
   var themeColor = '#111111';
 
-  var metaTitle = 'Chen Cong | crater.one';
-  var metaKeywords = 'Chen Cong, WebRTC';
-  var metaDescription = `ChenCong's website`;
+  var metaTitle = 'My website | crater.one';
+  var metaKeywords = 'WebRTC';
+  var metaDescription = `ChenCong's website`;//todo
   //- var metaOgpImg = 'ogp.png';
 
 doctype html
@@ -68,12 +68,10 @@ html(lang="ch")
                 |Contact Me.
 
     canvas(id="canvas-webgl", class="p-canvas-webgl")
+    script(src="https://unpkg.com/typewriter-effect@latest/dist/core.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js")
     script(src="./js/main.js")
-    //script.
-    //  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    //  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    //  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    //  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    //  ga('create', 'UA-568033-1', 'auto');
-    //  ga('send', 'pageview');
+
+    script(async, src="https://www.googletagmanager.com/gtag/js?id=G-WH0HB29VC0")
+    script.
+      window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-WH0HB29VC0');

@@ -59,7 +59,17 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: [dst_path]
+    clean: {
+      build: [dst_path],
+      js: [`${dst_js_path}/*.js`, `!${dst_js_path}/*.min.js`]
+    },
+    copy: {
+      img: {
+        files: [
+          { expand: true, cwd: src_path, src: ['img/**'], dest: dst_path },
+        ],
+      },
+    },
 
   });
 
@@ -69,9 +79,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'sass', 'pug', 'browserify', 'uglify'
-  ]);
+  grunt.registerTask('default', ['clean:build', 'sass', 'pug', 'browserify', 'uglify', 'copy:img', 'clean:js']);
 
 };
